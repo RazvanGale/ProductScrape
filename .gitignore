@@ -1,0 +1,66 @@
+# =========================
+# UiPath specific
+# =========================
+ 
+# Project dependencies (restored automatically)
+**/.local/
+**/packages/
+**/.nuget/
+ 
+# Logs
+*.log
+ 
+# Screenshots (Test automation)
+*.png
+ 
+# Test results
+TestResults/
+*.trx
+ 
+# Debug / publish output
+**/bin/
+**/obj/
+ 
+# Project settings (user specific)
+.project.lock.json
+.project.json.lock
+.vs/
+ 
+# UiPath Studio local settings
+**/.settings/
+**/.objects/
+ 
+# Temporary files
+*.tmp
+*.cache
+*.bak
+ 
+# Windows
+Thumbs.db
+Desktop.ini
+ 
+# Mac (if collaborating cross-platform)
+.DS_Store
+ 
+# VS Code (if used)
+.vscode/
+ 
+# Rider / IntelliJ
+.idea/
+ 
+# Node (if using REFramework with node tools)
+node_modules/
+ 
+# Python (if invoked scripts exist)
+__pycache__/
+*.pyc
+ 
+# Environment variables
+.env
+.env.*
+ 
+# Publish profiles
+PublishProfiles/
+ 
+# NuGet packages (if not using project-level restore)
+*.nupkg
