@@ -1,0 +1,6 @@
+{
+  "Name": "ProductScrape",
+  "ProjectType": "Process",
+  "Description": "The bot has to take the InputProduct, and search on the following websites:\r\n\r\nAmazon.com\r\nAmazon.es\r\nAmazon.de\r\nEmag.ro\r\nAltex.ro\r\npccomponentes.com",
+  "MainFile": "Main.xaml"
+}
