@@ -114,7 +114,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Browser" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,1307" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="cf16ff33-1bb6-4ef0-969e-1da829c427d2" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Amazon" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,1307" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="cf16ff33-1bb6-4ef0-969e-1da829c427d2" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -129,7 +129,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click '&amp; Up'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cf16ff33-1bb6-4ef0-969e-1da829c427d2" Version="V5">
+            <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click Best Reviewed" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cf16ff33-1bb6-4ef0-969e-1da829c427d2" Version="V5">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="amazon.es/s" CVScreenId="aa6c560f-8dac-40eb-949d-8d918f908ef5" ContentHash="7ZJX4gbGWUORQPKRsnZRag" CvTextArea="149, 676, 36, 17" CvTextArgument="&amp; Up" CvType="Text" DesignTimeRectangle="327, 813, 22, 12" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='&amp;amp; Up' tag='SPAN' /&gt;" Guid="30a72096-bb3d-4fb5-b0a5-81c14e5d0f27" InformativeScreenshot="8d5ded3f853a70f4cfa3ed277eaac9d5.png" Reference="6EfnHZpuMkCefSg1EM1IWQ/vYJb3K35K0mhgBGBLMOLVg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Amazon.*' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="[UiPath.UIAutomationNext.Enums.NWaitForReady.Complete]">
                   <uix:TargetAnchorable.Anchors>
@@ -140,7 +140,7 @@
                 </uix:TargetAnchorable>
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NGetText DisplayName="Get Text 'amazon.desk=iphone11&amp;…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,143" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="cf16ff33-1bb6-4ef0-969e-1da829c427d2" TextString="[strURL]" Version="V5">
+            <uix:NGetText DisplayName="Get Full Url" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,143" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="cf16ff33-1bb6-4ef0-969e-1da829c427d2" TextString="[strURL]" Version="V5">
               <uix:NGetText.Target>
                 <uix:TargetAnchorable BrowserURL="amazon.de/s" CVScreenId="6c377d3d-9381-442a-b009-13fa867979dc" ContentHash="LVxzqHvBCUSisdXnw7W2Xw" CvElementArea="121, 51, 1640, 36" CvType="InputBox" DesignTimeRectangle="165, 59, 1433, 24" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;ctrl name='Amazon.*' role='pane' /&gt;&lt;ctrl name='Address and search bar' role='editable text' /&gt;" Guid="71410935-961d-4e46-80b5-eb747cea12df" InformativeScreenshot="4a11be4e512c07ff3010429e30c60141.png" Reference="6EfnHZpuMkCefSg1EM1IWQ/-EiemkWnjEC4CVg00_k7-w" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Amazon.*' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="None">
                   <uix:TargetAnchorable.Anchors>
@@ -151,7 +151,7 @@
                 </uix:TargetAnchorable>
               </uix:NGetText.Target>
             </uix:NGetText>
-            <Assign sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign DisplayName="Add &quot;&amp;low-price=200&amp;high-price=500&quot; to Url" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[strURL]</OutArgument>
               </Assign.To>
@@ -159,7 +159,7 @@
                 <InArgument x:TypeArguments="x:String">[strURL + "&amp;low-price=200&amp;high-price=500"]</InArgument>
               </Assign.Value>
             </Assign>
-            <Assign sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign DisplayName="Clean Url" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_2">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[strURLclean]</OutArgument>
               </Assign.To>
@@ -167,7 +167,7 @@
                 <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(strURL, "(?i)\bamazon\.[^\s]+").Value]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'editable text'" EmptyField="True" sap:VirtualizedContainerService.HintSize="416,188" sap2010:WorkflowViewState.IdRef="TypeInto_1" SimulateType="True" Text="[strURLclean]">
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into New Url" EmptyField="True" sap:VirtualizedContainerService.HintSize="416,188" sap2010:WorkflowViewState.IdRef="TypeInto_1" SimulateType="True" Text="[strURLclean]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dbe9dc0d-ae71-4c46-8290-4b458a728da1" InformativeScreenshot="bc0a475286411e399ec17e13a9b4437e" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Amazon.*' /&gt;&lt;ctrl name='Amazon.*' role='pane' /&gt;&lt;ctrl name='Address and search bar' role='editable text' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -179,7 +179,7 @@
                 </ui:Target>
               </ui:TypeInto.Target>
             </ui:TypeInto>
-            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey 'editable text'" sap:VirtualizedContainerService.HintSize="416,178" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="enter" KeyModifiers="None" SpecialKey="True">
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Enter Hotkey" sap:VirtualizedContainerService.HintSize="416,178" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="enter" KeyModifiers="None" SpecialKey="True">
               <ui:SendHotkey.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1403e21a-a0d0-46b2-80c0-804d13e6f88f" InformativeScreenshot="e2c0b5b46d1136231252395076b20bdc" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Amazon.*' /&gt;&lt;ctrl name='Amazon.*' role='pane' /&gt;&lt;ctrl name='Address and search bar' role='editable text' /&gt;">
                   <ui:Target.TimeoutMS>

@@ -1,7 +1,7 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="EurConversion" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="io_dtEurConversion" Type="InOutArgument(sd:DataTable)" />
-    <x:Property Name="in_eurRate" Type="InArgument(x:String)" />
+    <x:Property Name="in_eurRate" Type="InArgument(x:Double)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -110,20 +110,20 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="EurConversion" sap:VirtualizedContainerService.HintSize="1275,1549" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="EurConversion" sap:VirtualizedContainerService.HintSize="890.8000000000001,1433.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Price in EUR" DataTable="[io_dtEurConversion]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="488,221" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[io_dtEurConversion]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="488,1305" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Price in EUR" DataTable="[io_dtEurConversion]" DisplayName="Add &quot;Price in EUR&quot; Column" sap:VirtualizedContainerService.HintSize="486.4,220" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[io_dtEurConversion]" DisplayName="For Each Price in Data Table" sap:VirtualizedContainerService.HintSize="486.4,1190.4" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentPrice" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,1132" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="484.8,1017.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="strPrice" />
               <Variable x:TypeArguments="x:Boolean" Name="isValid" />
@@ -133,50 +133,59 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign DisplayName="Take The Price In USD" sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="Assign_3">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[strPrice]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[CurrentRow("Local Currency Price (USD)").ToString]</InArgument>
+                <InArgument x:TypeArguments="x:String">[CurrentPrice("Local Currency Price (USD)").ToString]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:IsMatch DisplayName="Is Text Matching" sap:VirtualizedContainerService.HintSize="452,92" sap2010:WorkflowViewState.IdRef="IsMatch_1" Input="[strPrice]" IsBuilderTabModified="False" Pattern="^\s*\$\s*\d+\s*\.\s*\d{2}\s*$" RegexOption="IgnoreCase, Compiled" Result="[isValid]" />
-            <If Condition="[isValid]" sap:VirtualizedContainerService.HintSize="452,805" sap2010:WorkflowViewState.IdRef="If_1">
+            <ui:IsMatch DisplayName="Check The Price Structure" sap:VirtualizedContainerService.HintSize="451.2,92" sap2010:WorkflowViewState.IdRef="IsMatch_1" Input="[strPrice]" IsBuilderTabModified="False" Pattern="^\s*\$\s*\d+\s*\.\s*\d{2}\s*$" RegexOption="IgnoreCase, Compiled" Result="[isValid]" />
+            <If Condition="[isValid]" DisplayName="If Prive Have Good Structure " sap:VirtualizedContainerService.HintSize="451.2,691.2" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,585" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,472" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <Sequence.Variables>
-                    <Variable x:TypeArguments="x:String" Name="str1" />
-                    <Variable x:TypeArguments="x:String" Name="str2" />
+                    <Variable x:TypeArguments="x:String" Name="strAuxPriceRemoveWhiteSpaces" />
+                    <Variable x:TypeArguments="x:String" Name="strAuxPriceOnlyDigits" />
                   </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:Replace DisplayName="Replace Matching Patterns" sap:VirtualizedContainerService.HintSize="416,92" sap2010:WorkflowViewState.IdRef="Replace_1" Input="[strPrice]" IsBuilderTabModified="False" Pattern="\s+" RegexOption="IgnoreCase, Compiled" Result="[str1]">
+                  <ui:Replace sap2010:Annotation.AnnotationText="Remove all whitespace characters from the string." DisplayName="Remove White Characters" sap:VirtualizedContainerService.HintSize="416,123" sap2010:WorkflowViewState.IdRef="Replace_1" Input="[strPrice]" IsBuilderTabModified="False" Pattern="\s+" RegexOption="IgnoreCase, Compiled" Result="[strAuxPriceRemoveWhiteSpaces]">
                     <ui:Replace.Replacement>
                       <InArgument x:TypeArguments="x:String">
                         <Literal x:TypeArguments="x:String" Value="" />
                       </InArgument>
                     </ui:Replace.Replacement>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
                   </ui:Replace>
-                  <ui:Replace DisplayName="Replace Matching Patterns" sap:VirtualizedContainerService.HintSize="416,92" sap2010:WorkflowViewState.IdRef="Replace_2" Input="[str1]" IsBuilderTabModified="False" Pattern="%[^0-9\.,-]" RegexOption="IgnoreCase, Compiled" Result="[str2]">
+                  <ui:Replace sap2010:Annotation.AnnotationText="Ignore any character that is not a digit." DisplayName="Keep Only Digits" sap:VirtualizedContainerService.HintSize="416,123" sap2010:WorkflowViewState.IdRef="Replace_2" Input="[strAuxPriceRemoveWhiteSpaces]" IsBuilderTabModified="False" Pattern="%[^0-9\.,-]" RegexOption="IgnoreCase, Compiled" Result="[strAuxPriceOnlyDigits]">
                     <ui:Replace.Replacement>
                       <InArgument x:TypeArguments="x:String">
                         <Literal x:TypeArguments="x:String" Value="" />
                       </InArgument>
                     </ui:Replace.Replacement>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
                   </ui:Replace>
-                  <Assign sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_2">
+                  <Assign DisplayName="Make The Convertion " sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="Assign_2">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Object">[CurrentRow("Price in EUR")]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Object">[CurrentPrice("Price in EUR")]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:Object">[Math.Round(CDbl(str2) * CDbl(in_eurRate), 2)]</InArgument>
+                      <InArgument x:TypeArguments="x:Object">[Math.Round(CDbl(strAuxPriceOnlyDigits) * CDbl(in_eurRate), 2)]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;&quot;]" />
                 </Sequence>
               </If.Then>
               <If.Else>
