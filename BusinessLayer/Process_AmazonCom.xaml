@@ -184,6 +184,7 @@
             </uix:NExtractData>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="EurConversion - Invoke Workflow File (DataLayer\EurConversion.xaml)" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="DataLayer\EurConversionFromUSD.xaml">
               <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="inConfig">[in_Config]</InArgument>
                 <InOutArgument x:TypeArguments="sd2:DataTable" x:Key="io_dtEurConversion">[dt_amazon_com]</InOutArgument>
                 <InArgument x:TypeArguments="x:Double" x:Key="in_eurRate">[in_EurRate]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>

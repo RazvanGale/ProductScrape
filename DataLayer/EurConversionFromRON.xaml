@@ -1,5 +1,6 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="EurConversionFromRON" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
+    <x:Property Name="inConfig" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="io_dt_conversion" Type="InOutArgument(sd:DataTable)" />
     <x:Property Name="in_EurRate" Type="InArgument(x:Double)" />
     <x:Property Name="in_RonRate" Type="InArgument(x:Double)" />
@@ -95,6 +96,7 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>Studio.Generated.TypedDataTable2</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="EurConversionFromRON" sap:VirtualizedContainerService.HintSize="890.8000000000001,876.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -124,7 +126,7 @@
                 <OutArgument x:TypeArguments="x:Double">[dblPrice]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:Double">[CDbl(System.Text.RegularExpressions.Regex.Match(CurrentRow("Local Currency Price (RON)").ToString, "\d{1,3}(?:\.\d{3})*,\d{2}").Value.Replace(".", "").Replace(",", "."))]</InArgument>
+                <InArgument x:TypeArguments="x:Double">[CDbl(System.Text.RegularExpressions.Regex.Match(CurrentRow("Local Currency Price (RON)").ToString, inConfig("regexEurFromRonConv").ToString).Value.Replace(".", "").Replace(",", "."))]</InArgument>
               </Assign.Value>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">

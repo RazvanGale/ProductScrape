@@ -55,6 +55,10 @@
       <x:String>UiPath.Platform.ResourceHandling</x:String>
       <x:String>UiPath.Excel.Activities</x:String>
       <x:String>System.Numerics</x:String>
+      <x:String>UiPath.UIAutomationNext.Triggers</x:String>
+      <x:String>UiPath.Platform.Triggers</x:String>
+      <x:String>UiPath.Platform.Triggers.Scope</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Triggers</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -121,19 +125,19 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Process_eMAGRo" sap:VirtualizedContainerService.HintSize="890.8000000000001,1903.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Process_eMAGRo" sap:VirtualizedContainerService.HintSize="890.8000000000001,2096.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="eMAG.ro" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="451.2,1880" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" ScopeGuid="85d370a7-246b-490e-8db5-e8bea1a9ff0c" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="eMAG.ro" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="451.2,2073.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" ScopeGuid="85d370a7-246b-490e-8db5-e8bea1a9ff0c" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,1686.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,1880" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="sd2:DataTable" Name="dt_eMAG_ro" />
             </Sequence.Variables>
@@ -176,13 +180,7 @@
             </uix:NClick>
             <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="[UiPath.UIAutomationNext.Enums.NClickMode.None]" ClipboardMode="Never" ContinueOnError="True" DisplayName="Type Into Min Price" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,297.6" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="Simulate" ScopeIdentifier="85d370a7-246b-490e-8db5-e8bea1a9ff0c" Text="1000" Version="V5">
               <uix:NTypeInto.Target>
-                <uix:TargetAnchorable BrowserURL="emag.ro/search/IPhone17" CVScreenId="9e80f755-3c93-445d-8716-8c8627075c4c" ContentHash="vhH8NsAelUKawO6Sr56nKg" CvElementArea="298, 763, 92, 24" CvType="InputBox" DesignTimeRectangle="299, 765, 90, 22" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-label='preț minim' tag='INPUT' /&gt;" Guid="cd87ae09-b3f5-4dd3-a0bc-e21089797a2e" InformativeScreenshot="76ccd5ab6f5348755a28d0d2ab3b9efe.png" Reference="6EfnHZpuMkCefSg1EM1IWQ/OGcSQdCTs0GProYfRwuwnA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cauți IPhone17? Alege din oferta eMAG.ro' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
-                  <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target CVScreenId="9e80f755-3c93-445d-8716-8c8627075c4c" CvElementArea="298, 694, 15, 15" CvTextArea="321, 695, 68, 15" CvTextArgument="Interval pret" CvType="CheckBox" DesignTimeRectangle="299, 693, 231, 18" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Interval pret' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' type='' check:innerText='Interval pret' /&gt;" Guid="48c5b1bf-d250-4163-9493-8d0286438a2e" SearchSteps="FuzzySelector, CV" />
-                    </scg:List>
-                  </uix:TargetAnchorable.Anchors>
-                </uix:TargetAnchorable>
+                <uix:TargetAnchorable BrowserURL="emag.ro/search/iphone%2017%20pro" CVScreenId="76fcd225-4a3e-4acb-9b4f-36fd35eb27e1" ContentHash="ygVh8As7KEuRpMDyBYPpyA" CvElementArea="131, 674, 115, 31" CvTextArea="174, 681, 28, 15" CvTextArgument="205" CvType="Button" DesignTimeRectangle="133, 676, 112, 27" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-label='preț minim' tag='INPUT' /&gt;" Guid="19c90b5c-b0d3-41d3-9e5b-9fb9d12d7e11" InformativeScreenshot="abbb99b246ac85ef9e0a989de1982e48.png" Reference="6EfnHZpuMkCefSg1EM1IWQ/OGcSQdCTs0GProYfRwuwnA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cauți iphone 17 pro? Alege din oferta eMAG.ro' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
               </uix:NTypeInto.Target>
               <uix:NTypeInto.VerifyOptions>
                 <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" ExpectedText="[Nothing]" Mode="Appears" Retry="False">
@@ -192,12 +190,12 @@
                 </uix:VerifyExecutionTypeIntoOptions>
               </uix:NTypeInto.VerifyOptions>
             </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="[UiPath.UIAutomationNext.Enums.NClickMode.None]" ClipboardMode="Never" ContinueOnError="True" DisplayName="Type Into Max Price" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,245.6" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="Simulate" ScopeIdentifier="85d370a7-246b-490e-8db5-e8bea1a9ff0c" Text="5000" Version="V5">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="[UiPath.UIAutomationNext.Enums.NClickMode.None]" ClipboardMode="Never" ContinueOnError="True" DisplayName="Type Into Max Price" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,245.6" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="Simulate" ScopeIdentifier="85d370a7-246b-490e-8db5-e8bea1a9ff0c" Text="2500" Version="V5">
               <uix:NTypeInto.Target>
-                <uix:TargetAnchorable BrowserURL="emag.ro/search/IPhone17" CVScreenId="9e80f755-3c93-445d-8716-8c8627075c4c" ContentHash="N2OC-gpBVkqx3MAcs70QDg" CvElementArea="408, 764, 93, 24" CvType="InputBox" DesignTimeRectangle="410, 765, 90, 22" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-label='preț maxim' tag='INPUT' /&gt;" Guid="db7d53da-e58e-487b-9da1-6ff83f8ab2b8" InformativeScreenshot="0c1fe307102610090f829b5526129e39.png" Reference="6EfnHZpuMkCefSg1EM1IWQ/0G_BBLWqQ0yjhi_XDI4ciA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cauți IPhone17? Alege din oferta eMAG.ro' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                <uix:TargetAnchorable BrowserURL="emag.ro/search/iphone%2017%20pro" CVScreenId="f28c5f35-bf31-43ae-8b7f-baae142cbb1d" ContentHash="amtEi3_T80iUaJEJ27iekw" CvElementArea="269, 673, 116, 31" CvType="InputBox" DesignTimeRectangle="272, 676, 111, 27" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-label='preț maxim' tag='INPUT' /&gt;" Guid="15ba42dd-87b1-4a9d-9790-e094dc80873d" InformativeScreenshot="b5061954d691fe43c56d267dc70c4e1f.png" Reference="6EfnHZpuMkCefSg1EM1IWQ/0G_BBLWqQ0yjhi_XDI4ciA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cauți iphone 17 pro? Alege din oferta eMAG.ro' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
                   <uix:TargetAnchorable.Anchors>
                     <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target DesignTimeRectangle="317, 729, 195, 18" FullSelectorArgument="&lt;webctrl tag='DIV' idx='145' /&gt;" Guid="15ac093a-b0dc-4d91-9d76-aded65ea2b7f" SearchSteps="Selector" />
+                      <uix:Target CVScreenId="f28c5f35-bf31-43ae-8b7f-baae142cbb1d" CvElementArea="130, 588, 20, 20" CvTextArea="160, 587, 85, 19" CvTextArgument="Interval pret" CvType="CheckBox" DesignTimeRectangle="133, 586, 289, 23" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Interval pret' tag='A' type='' class='js-filter-item filter-item  filter-custom-price-selected' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Interval pret' /&gt;" Guid="9728419f-c8ec-4b9f-a5ff-481fd53321f0" SearchSteps="FuzzySelector, CV" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
                 </uix:TargetAnchorable>
@@ -213,6 +211,17 @@
                 </uix:VerifyExecutionTypeIntoOptions>
               </uix:NTypeInto.VerifyOptions>
             </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Interval pret'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,193.6" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="85d370a7-246b-490e-8db5-e8bea1a9ff0c" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="emag.ro/search/iphone%2017%20pro" CVScreenId="f2300219-62e1-4517-b582-6029b69af5b7" ContentHash="2O6g-R5nnUKm4pdyq8jgtQ" CvElementArea="392, 673, 31, 32" CvType="ArrowButton" DesignTimeRectangle="400, 683, 16, 15" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;button&amp;gt;i' isleaf='1' tag='I' /&gt;" Guid="9f85c7cc-9e47-4f74-89f7-02bddf13f263" InformativeScreenshot="d1207391495004eb0ca97b160c64de38.png" Reference="6EfnHZpuMkCefSg1EM1IWQ/GjE4LyQ2nEaiNs7vlltloQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cauți iphone 17 pro? Alege din oferta eMAG.ro' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="133, 631, 289, 72" FuzzySelectorArgument="&lt;webctrl type='' class='custom-price-slider-container ' tag='DIV' aaname='                                               ' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='205' /&gt;" Guid="75a93b3c-f364-4273-889c-0910f9477501" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
             <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dt_eMAG_ro]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Product Name'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='Product URL'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;true&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='Local Currency Price (RON)'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext' name2='Column2' attr2='href'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='h2' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column1' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='p' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,142.4" sap2010:WorkflowViewState.IdRef="NExtractData_2" LimitExtractionTo="Rows" MaximumResults="10" ScopeIdentifier="85d370a7-246b-490e-8db5-e8bea1a9ff0c" Version="V5">
               <uix:NExtractData.Target>
                 <uix:TargetAnchorable BrowserURL="https://www.emag.ro/search/iphone17?ref=effective_search" DesignTimeRectangle="553, 294, 1087, 8860" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='card_grid' tag='DIV' /&gt;" Guid="29461cfc-581b-4576-bbeb-c5c53f0ce8ec" InformativeScreenshot="c0659bd9ff150aef74599113365d68e4.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Cauți iphone17? Alege din oferta eMAG.ro' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
@@ -220,6 +229,7 @@
             </uix:NExtractData>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="EurConversionFromRON - Invoke Workflow File (DataLayer\EurConversionFromRON.xaml)" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="DataLayer\EurConversionFromRON.xaml">
               <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="inConfig">[in_Config]</InArgument>
                 <InOutArgument x:TypeArguments="sd2:DataTable" x:Key="io_dt_conversion">[dt_eMAG_ro]</InOutArgument>
                 <InArgument x:TypeArguments="x:Double" x:Key="in_EurRate">[in_EurRate]</InArgument>
                 <InArgument x:TypeArguments="x:Double" x:Key="in_RonRate">[in_RonRate]</InArgument>

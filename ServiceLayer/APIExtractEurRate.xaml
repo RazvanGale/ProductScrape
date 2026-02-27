@@ -1,5 +1,6 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="APIExtractEurRate" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uwah="clr-namespace:UiPath.Web.Activities.Http;assembly=UiPath.Web.Activities" xmlns:uwahm="clr-namespace:UiPath.Web.Activities.Http.Models;assembly=UiPath.Web.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
+    <x:Property Name="inConfig" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="out_eurRate" Type="OutArgument(x:Double)" />
     <x:Property Name="out_ronRate" Type="OutArgument(x:Double)" />
   </x:Members>
@@ -106,7 +107,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="APIExtractEurRate" sap:VirtualizedContainerService.HintSize="890.8000000000001,969.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="APIExtractEurRate" sap:VirtualizedContainerService.HintSize="553.2,969.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="uwahm:HttpResponseSummary" Name="responseBody" />
       <Variable x:TypeArguments="x:String" Name="responseText" />
@@ -131,7 +132,7 @@
         <InArgument x:TypeArguments="x:String">[responseBody.TextContent]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap2010:Annotation.AnnotationText="his code finds the numeric value associated with &quot;RON&quot; inside the JSON text, extracts it using regex, and converts it into a Double using an invariant (dot-based) number format." sap:VirtualizedContainerService.HintSize="449.6,252" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign sap2010:Annotation.AnnotationText="this code finds the numeric value associated with &quot;RON&quot; inside the JSON text, extracts it using regex, and converts it into a Double using an invariant (dot-based) number format." sap:VirtualizedContainerService.HintSize="449.6,252" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Double">[out_ronRate]</OutArgument>
       </Assign.To>
@@ -139,7 +140,7 @@
         <InArgument x:TypeArguments="x:Double" xml:space="preserve">[Double.Parse(
     System.Text.RegularExpressions.Regex.Match(
         responseText,
-        """RON""\s*:\s*""([\d.]+)"""
+        inConfig("regexRonRate").ToString
     ).Groups(1).Value,
     System.Globalization.CultureInfo.InvariantCulture
 )]</InArgument>
@@ -150,7 +151,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <Assign sap2010:Annotation.AnnotationText="his code finds the numeric value associated with &quot;EUR&quot; inside the JSON text, extracts it using regex, and converts it into a Double using an invariant (dot-based) number format." sap:VirtualizedContainerService.HintSize="449.6,243.2" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <Assign sap2010:Annotation.AnnotationText="this code finds the numeric value associated with &quot;EUR&quot; inside the JSON text, extracts it using regex, and converts it into a Double using an invariant (dot-based) number format." sap:VirtualizedContainerService.HintSize="449.6,243.2" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Double">[out_eurRate]</OutArgument>
       </Assign.To>
@@ -158,7 +159,7 @@
         <InArgument x:TypeArguments="x:Double" xml:space="preserve">[Double.Parse(
     System.Text.RegularExpressions.Regex.Match(
         responseText,
-        """EUR""\s*:\s*""([\d.]+)"""
+       inConfig("regexEurRate").ToString()
     ).Groups(1).Value,
     System.Globalization.CultureInfo.InvariantCulture
 )]</InArgument>
