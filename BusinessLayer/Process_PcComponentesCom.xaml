@@ -1,0 +1,252 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Process_PcComponentesCom" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:sd2="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_TransactionItem" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>Process_PcComponentesCom_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Azure.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Process_PcComponentesCom" sap:VirtualizedContainerService.HintSize="890.8000000000001,1868.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="PcComponentes.com" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="451.2,1845.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" ScopeGuid="ad7ac6db-368f-4078-81da-6735941e5168" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,1652" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="sd2:DataTable" Name="dt_pccomponents_com" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click 'Verify you are human'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,193.6" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ad7ac6db-368f-4078-81da-6735941e5168" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="pccomponentes.com" CVScreenId="8e777e77-0dfd-482b-931d-a9017bcfaba9" ContentHash="i9x3i7NpjEOLcre8GSU5Sw" CvElementArea="418, 564, 33, 33" CvType="CheckBox" DesignTimeRectangle="420, 566, 30, 30" ElementType="CheckBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl parentid='CZUq4' tag='DIV' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' /&gt;&lt;webctrl shadowhostid='' tag='IFRAME' matching:shadowhostid='fuzzy' fuzzylevel:shadowhostid='0.0' /&gt;&lt;webctrl tag='BODY' /&gt;&lt;webctrl shadowhostid='' tag='INPUT' type='checkbox' class='' aaname='' matching:shadowhostid='fuzzy' fuzzylevel:shadowhostid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="ccc04dc5-1574-4214-b987-dd663c29bf64" InformativeScreenshot="d18cb1d75ff3f1c308e455b0a5492e9b.png" Reference="6EfnHZpuMkCefSg1EM1IWQ/gxSNxhbXJEantYJWZn01Jg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Just a moment...' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="8e777e77-0dfd-482b-931d-a9017bcfaba9" CvTextArea="457, 571, 167, 21" CvTextArgument="Verify you are human" CvType="Text" DesignTimeRectangle="460, 569, 164, 23" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='CZUq4' tag='DIV' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' /&gt;&lt;webctrl shadowhostid='' tag='IFRAME' matching:shadowhostid='fuzzy' fuzzylevel:shadowhostid='0.0' /&gt;&lt;webctrl tag='BODY' /&gt;&lt;webctrl class='cb-lb-t' shadowhostid='' tag='SPAN' type='' aaname='Verify you are human' matching:class='fuzzy' fuzzylevel:class='0.0' matching:shadowhostid='fuzzy' fuzzylevel:shadowhostid='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Verify you are human' /&gt;" Guid="75d1f042-61cc-4bd0-ae3c-8e98f1ac0b1a" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="[UiPath.UIAutomationNext.Enums.NClickMode.None]" ClipboardMode="Never" DisplayName="Type Into Product Name" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,245.6" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="Simulate" ScopeIdentifier="ad7ac6db-368f-4078-81da-6735941e5168" Text="[in_TransactionItem]" Version="V5">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="pccomponentes.com" CVScreenId="e205667f-11cf-4b2f-a0b1-8cdeacafe225" ContentHash="9H-h7Jft3EuX-6cKcKpGJg" CvElementArea="844, 196, 392, 50" CvType="InputBox" DesignTimeRectangle="847, 197, 388, 48" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='search' tag='INPUT' /&gt;" Guid="5f09dba0-c77b-481b-884a-c250da9baf75" InformativeScreenshot="a8f644fad2fb02493d3614a06d5f76f4.png" Reference="6EfnHZpuMkCefSg1EM1IWQ/ZWfOj1M-6kqESRRatjP_rg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='PcComponentes.com | Tienda de Informática y Tecnología online' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="584, 197, 699, 64" ElementType="InputBox" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;div&amp;gt;div' idx='3' parentid='header-top' tag='DIV' /&gt;" Guid="41982946-0148-4cd6-9218-69126fe9a404" SearchSteps="Selector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Enter Hotkey" sap:VirtualizedContainerService.HintSize="416,186.4" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="enter" KeyModifiers="None" SpecialKey="True">
+              <ui:SendHotkey.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f45bd37b-82ff-40cf-8ec0-6cd0b11831a5" InformativeScreenshot="042103f36e2c8252c4a860e31a203e72" Selector="&lt;webctrl id='search' tag='INPUT' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SendHotkey.Target>
+            </ui:SendHotkey>
+            <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click 'Top Rated'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,193.6" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ad7ac6db-368f-4078-81da-6735941e5168" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="pccomponentes.com/search" CVScreenId="6b17d610-88a0-47fd-9812-29b976b10586" ContentHash="MZ0P-6_890yXnSUQOXqgTg" CvElementArea="1367, 319, 144, 41" CvTextArea="1386, 332, 106, 17" CvTextArgument="Mejor valorados" CvType="Button" DesignTimeRectangle="1386, 330, 106, 20" ElementType="Text" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl parentid='sorting-top_rated' tag='DIV' type='' class='button-module_styledChild__0A252' aaname='Mejor valorados' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Mejor valorados' /&gt;" Guid="38146b0a-8826-492a-9ab3-19ee219092cc" InformativeScreenshot="9c5f681aa100ed125b7a2bfdd12638c1.png" Reference="6EfnHZpuMkCefSg1EM1IWQ/0AQSKqxwbUG2_C5bg-d20w" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Buscar | PcComponentes.com' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" ContinueOnError="True" DisplayName="Type Into Lowest Price" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,245.6" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="Simulate" ScopeIdentifier="ad7ac6db-368f-4078-81da-6735941e5168" Text="200" Version="V5">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="pccomponentes.com/search" ContentHash="rbXY4Gy2UEyPujn1koDgKA" DesignTimeRectangle="204, 609, 94, 40" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-label='minimum' tag='INPUT' /&gt;" Guid="46ad7429-5647-48ba-ad65-06801706c708" InformativeScreenshot="2896bbd527c6b93d3fb96289a5cbc939.png" Reference="6EfnHZpuMkCefSg1EM1IWQ/AFyckC_N4k2f4I8DFCdEng" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Buscar | PcComponentes.com' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" ContinueOnError="True" DisplayName="Type Into Max Price" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,245.6" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="Simulate" ScopeIdentifier="ad7ac6db-368f-4078-81da-6735941e5168" Text="500" Version="V5">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="pccomponentes.com/search" ContentHash="acEmNi--jkqvm7R3WJ8n-Q" DesignTimeRectangle="318, 609, 94, 40" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-label='maximum' tag='INPUT' /&gt;" Guid="747c221d-1b49-4442-9d76-59b07de1c9d0" InformativeScreenshot="d4e9443c196ed6a567d249e5bef4e4bd.png" Reference="6EfnHZpuMkCefSg1EM1IWQ/NRN0hliAjEyoyjDPkqlrUw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Buscar | PcComponentes.com' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dt_pccomponents_com]" DisplayName="Extract Products from PcComponents" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Product Name'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='Product URL'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;true&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='Local Price Currency (EUR)'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='a' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext' name2='Column2' attr2='href'&gt;&lt;webctrl tag='a' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='h3' idx='1' /&gt;&lt;/column&gt;&lt;column exact='0' name='Column1' attr='fulltext'&gt;&lt;webctrl tag='a' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,142.4" sap2010:WorkflowViewState.IdRef="NExtractData_1" InteractionMode="Simulate" LimitExtractionTo="Rows" MaximumResults="10" ScopeIdentifier="ad7ac6db-368f-4078-81da-6735941e5168" Version="V5">
+              <uix:NExtractData.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.pccomponentes.com/search/?query=IPad&amp;page=1&amp;or-relevance" DesignTimeRectangle="379, 504, 1510, 6224" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='search-results-product-grid' tag='DIV' /&gt;" Guid="f3375f70-c142-41a9-80aa-fe9a68188dba" InformativeScreenshot="0d2a512d295cb7b06306bc274a679f16.jpg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Buscar | PcComponentes.com' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NExtractData.Target>
+            </uix:NExtractData>
+            <ui:WriteRange StartingCell="{x:Null}" WorkbookPathResource="{x:Null}" DataTable="[dt_pccomponents_com]" DisplayName="Create PcComponents Report" sap:VirtualizedContainerService.HintSize="416,139.2" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="PcComponents.com" WorkbookPath="[&quot;C:\_Gale Razvan\ProductScrapeResult\&quot; + in_TransactionItem + &quot;.xlsx&quot;]" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.OCREngine>
+        <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+          <ActivityFunc.Argument>
+            <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+          </ActivityFunc.Argument>
+        </ActivityFunc>
+      </uix:NApplicationCard.OCREngine>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1048" BrowserType="Chrome" ContentHash="fiCayAYDWUueNfAK_wU-Vg" IconBase64="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" InformativeScreenshot="2cba8e47b045b40b81d06c2827651a79.jpg" Reference="6EfnHZpuMkCefSg1EM1IWQ/xWcTyw2p6UmVe6Xdp5QUgw" Selector="&lt;html app='chrome.exe' title='PcComponentes.com | Tienda de Informática y Tecnología online' /&gt;" Url="[in_Config(&quot;PcComponentesUrl&quot;).ToString]" Version="V2">
+          <uix:TargetApp.Arguments>
+            <InArgument x:TypeArguments="x:String" />
+          </uix:TargetApp.Arguments>
+          <uix:TargetApp.WorkingDirectory>
+            <InArgument x:TypeArguments="x:String" />
+          </uix:TargetApp.WorkingDirectory>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
