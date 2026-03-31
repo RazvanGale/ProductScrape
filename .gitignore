@@ -6,10 +6,10 @@
 **/.local/
 **/packages/
 **/.nuget/
- 
+*.screenshots
 # Logs
 *.log
- 
+.screenshots
 # Screenshots (Test automation)
 *.png
  
